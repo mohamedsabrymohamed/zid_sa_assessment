@@ -39,6 +39,7 @@ class LoginResource extends JsonResource
             'user'          => new UserResource($this->user),
             'access_token'  => $this->token,
             'token_type'    => 'bearer',
+            'expires_in'    => 99999999999,
         ];
     }
 }

@@ -2,7 +2,7 @@
 
 
 
-Route::group(['namespace' => 'App\Http\Controllers\Api\Auth\User'], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Api\Auth\Client'], function () {
     Route::post('login/client',    'LoginController@login');
 });
 
@@ -22,7 +22,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Api\Auth'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
 
         Route::post('logout', 'BaseLoginController@logout');
-
     });
 
 

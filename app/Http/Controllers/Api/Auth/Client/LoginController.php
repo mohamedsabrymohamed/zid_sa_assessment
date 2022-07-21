@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Auth\User;
+namespace App\Http\Controllers\Api\Auth\Client;
 
 use App\Enums\UserTypeEnum;
 use App\Http\Controllers\Api\Auth\BaseLoginController;
