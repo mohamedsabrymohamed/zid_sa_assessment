@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
     Route::group(['middleware' => ['auth:api', 'auth.type:merchant']], function () {
         Route::post('stores/', 'StoresController@store');
+        Route::post('products/', 'ProductsController@store');
     });
 });
 
