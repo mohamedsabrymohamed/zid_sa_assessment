@@ -27,7 +27,10 @@ class CartRepository extends BaseRepository implements CartRepositoryInterface
     public function addToCart($attributes, $userId)
     {
         $cart = $this->firstOrCreate($userId);
-        $cart->items()->create($attributes);
+        $cart->items()->updateOrCreate(
+            ['product_id' => $attributes['product_id']],
+            ['qty'        => $attributes['qty']]
+        );
         return $cart->load('items');
     }
 
