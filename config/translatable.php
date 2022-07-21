@@ -43,7 +43,7 @@ return [
     | and never fallback to the translator one.
     |
     */
-    'locale' => null,
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -142,7 +142,7 @@ return [
      *
      */
     'rule_factory' => [
-        'format' => \Astrotomic\Translatable\Validation\RuleFactory::FORMAT_ARRAY,
+        'format' => \Astrotomic\Translatable\Validation\RuleFactory::FORMAT_KEY,
         'prefix' => '%',
         'suffix' => '%',
     ],

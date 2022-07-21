@@ -16,7 +16,8 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.4",
-        "tymon/jwt-auth": "^1.0"
+        "tymon/jwt-auth": "^1.0",
+        "ext-intl": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
