@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
-    use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'user_id', 'vat', 'shipping_cost',
+    ];
 }
