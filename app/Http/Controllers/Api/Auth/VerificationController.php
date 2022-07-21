@@ -31,19 +31,4 @@ class VerificationController extends Controller
         return redirect()->to(config('front-end.front_url'));
     }
 
-    /**
-     * Resend email verification.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function resend() {
-        if (auth()->user()->hasVerifiedEmail()) {
-            return response()->json(["msg" => "Email already verified."], Response::HTTP_BAD_REQUEST);
-        }
-
-        auth()->user()->sendEmailVerificationNotification();
-
-        return response()->json(["msg" => "Email verification link sent on your email id"]);
-    }
-
 }
