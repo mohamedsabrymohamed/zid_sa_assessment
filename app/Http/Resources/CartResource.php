@@ -15,8 +15,8 @@ class CartResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'sub_total'                 => 222,
-            'total'                     => 5555,
+            'sub_total'                 => $this->sub_total,
+            'total'                     => $this->total,
             'items'                     => CartItemResource::collection($this->items),
         ];
     }

@@ -11,5 +11,10 @@ class Product extends Model
     use Translatable;
 
     public $translatedAttributes = ['name', 'description'];
-    protected $fillable = ['price','quantity','vat_included'];
+    protected $fillable = ['price','quantity','vat_included','store_id'];
+
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }
 }

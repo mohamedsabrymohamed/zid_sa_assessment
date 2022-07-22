@@ -16,6 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->double('price');
+            $table->foreignId('store_id')->constrained('stores')->cascadeOnDelete();
             $table->double('quantity');
             $table->boolean('vat_included')->default(1);
             $table->timestamps();

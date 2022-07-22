@@ -27,5 +27,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
 Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
     Route::group(['middleware' => ['auth:api', 'auth.type:client']], function () {
         Route::post('carts/', 'CartsController@add');
+        Route::get('carts/', 'CartsController@get');
     });
 });

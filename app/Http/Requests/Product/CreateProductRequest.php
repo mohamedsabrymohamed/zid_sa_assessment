@@ -26,7 +26,6 @@ class CreateProductRequest extends FormRequest
         return [
             'name'                 => 'required|string|min:3|max:255',
             'description'          => 'required|string|min:3|max:1000',
-            'locale'               => 'required|string|max:100',
             'price'                => 'required|numeric|max:100000',
             'quantity'             => 'required|numeric|max:10000000',
             'vat_included'         => 'required|boolean',

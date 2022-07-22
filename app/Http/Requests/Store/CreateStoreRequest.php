@@ -25,7 +25,6 @@ class CreateStoreRequest extends FormRequest
     {
         return [
             'name'                 => 'required|string|min:3|max:255',
-            'user_id'              => 'required|exists:users,id',
             'vat'                  => 'required|numeric|max:100',
             'shipping_cost'        => 'required|numeric|max:1000',
         ];

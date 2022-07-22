@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\CreateProductRequest;
 use App\Http\Resources\ProductResource;
+use App\Models\Store;
 use App\Repositories\ProductRepository;
 
 class ProductsController extends Controller
@@ -16,7 +17,10 @@ class ProductsController extends Controller
     }
     public function store(CreateProductRequest $request)
     {
-       $product = $this->productRepository->create($request->validated());
+        $data = $request->validated();
+
+        $data['store_id'] = Store::where('user_id', auth()->id())->first()->id;
+        $product = $this->productRepository->create($data);
 
         return new ProductResource($product);
     }

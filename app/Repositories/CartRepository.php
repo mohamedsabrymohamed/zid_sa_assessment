@@ -31,7 +31,10 @@ class CartRepository extends BaseRepository implements CartRepositoryInterface
             ['product_id' => $attributes['product_id']],
             ['qty'        => $attributes['qty']]
         );
-        return $cart->load('items');
     }
 
+    public function get($authId)
+    {
+        return $this->model->where('user_id' , $authId)->with(['items.product.store'])->first();
+    }
 }

@@ -31,10 +31,5 @@ class BaseRepository
         return $this;
     }
 
-    public function get()
-    {
-        return $this->model->get();
-    }
-
 
 }
