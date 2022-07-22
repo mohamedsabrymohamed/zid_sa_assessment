@@ -9,11 +9,20 @@ use App\Repositories\StoreRepository;
 
 class StoresController extends Controller
 {
-     public $storeRepository;
+    public $storeRepository;
+
+    /**
+     * @param StoreRepository $storeRepository
+     */
     public function __construct(StoreRepository $storeRepository)
     {
         $this->storeRepository = $storeRepository;
     }
+
+    /**
+     * @param CreateStoreRequest $request
+     * @return StoreResource
+     */
     public function store(CreateStoreRequest $request)
     {
        $store = $this->storeRepository->createOrUpdate($request->validated());

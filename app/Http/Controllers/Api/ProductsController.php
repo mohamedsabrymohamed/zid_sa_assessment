@@ -10,11 +10,20 @@ use App\Repositories\ProductRepository;
 
 class ProductsController extends Controller
 {
-     public $productRepository;
+    public $productRepository;
+
+    /**
+     * @param ProductRepository $productRepository
+     */
     public function __construct(ProductRepository $productRepository)
     {
         $this->productRepository = $productRepository;
     }
+
+    /**
+     * @param CreateProductRequest $request
+     * @return ProductResource
+     */
     public function store(CreateProductRequest $request)
     {
         $data = $request->validated();

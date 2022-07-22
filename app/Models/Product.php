@@ -13,6 +13,9 @@ class Product extends Model
     public $translatedAttributes = ['name', 'description'];
     protected $fillable = ['price','quantity','vat_included','store_id'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function store()
     {
         return $this->belongsTo(Store::class);

@@ -8,11 +8,18 @@ class CartCalculationService
 
     public $cartRepository;
 
+    /**
+     * @param CartRepository $cartRepository
+     */
     public function __construct(CartRepository $cartRepository)
     {
         $this->cartRepository = $cartRepository;
     }
 
+    /**
+     * @param $authId
+     * @return mixed
+     */
     public function exec($authId)
     {
         $cart = $this->cartRepository->get($authId);

@@ -27,6 +27,11 @@ class RegisterController extends Controller
         return new LoginResource(JWTAuth::fromUser($user), $user );
     }
 
+    /**
+     * @param AuthRegister $request
+     * @param UserRepository $userRepository
+     * @return LoginResource
+     */
     public function merchantRegister(AuthRegister $request, UserRepository $userRepository)
     {
         $data = $request->validated();

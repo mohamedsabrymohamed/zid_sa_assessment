@@ -8,6 +8,9 @@ class Cart extends Model
 {
     protected $fillable = ['user_id'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function items()
     {
         return $this->hasMany(CartItem::class);

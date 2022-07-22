@@ -18,6 +18,10 @@ class StoreRepository extends BaseRepository implements StoreRepositoryInterface
         $this->model = $store;
     }
 
+    /**
+     * @param $attributes
+     * @return mixed
+     */
     public function createOrUpdate($attributes)
     {
         return $this->model->updateOrCreate(

@@ -10,6 +10,10 @@ class UserTypeEnum
     const CLIENT    = 1;
     const MERCHANT  = 2;
 
+    /**
+     * @param $type
+     * @return int|null
+     */
     public static function getIdByType($type)
     {
 
@@ -22,6 +26,10 @@ class UserTypeEnum
         return null;
     }
 
+    /**
+     * @param $typeId
+     * @return string|null
+     */
     public static function getTypeConst($typeId)
     {
 
